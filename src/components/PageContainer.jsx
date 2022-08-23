@@ -1,10 +1,10 @@
 import { IoCartSharp } from "react-icons/io5"
-import { FaPhone, FaPlane, FaGift } from "react-icons/fa"
+import { FaPhone, FaPlane, FaGift, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa"
 import { FiChevronsRight } from "react-icons/fi"
 
 const PageContainer = ({ children }) => {
     return (
-        <div>
+        <div className="page-container">
             <section className="header">
                 <div className="logo-box">
                     <p>Golden Shoe</p>
@@ -27,7 +27,9 @@ const PageContainer = ({ children }) => {
                     </div>
                 </nav>
             </section>
-            {children}
+            <div className="page-content">
+                {children}
+            </div>
             <section className="learn-more-banner">
                 <div>
                     <div className="flex">
@@ -89,6 +91,9 @@ const PageContainer = ({ children }) => {
                 <p>My Account</p>
                 <p>The Store</p>
                 <p>Contact</p>
+                <FaTwitter fontSize="36px" />
+                <FaFacebook fontSize="36px" />
+                <FaInstagram fontSize="36px" />
             </section>
         </div>
     )
