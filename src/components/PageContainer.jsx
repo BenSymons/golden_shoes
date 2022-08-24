@@ -2,8 +2,15 @@ import { IoCartSharp } from "react-icons/io5"
 import { FaPhone, FaPlane, FaGift, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa"
 import { FiChevronsRight } from "react-icons/fi"
 import Sidebar from "./Sidebar"
+import { useNavigate, useLocation } from "react-router-dom"
 
 const PageContainer = ({ children }) => {
+    const navigate = useNavigate()
+    const location = useLocation()
+    const { pathname } = location
+
+    const handleNavigate = (url) => navigate(url)
+
     return (
         <div className="page-container">
             <section className="header">
@@ -11,8 +18,14 @@ const PageContainer = ({ children }) => {
                     <p>Golden Shoe</p>
                 </div>
                 <nav className="header-buttons">
-                    <div><p>Home</p></div>
-                    <div><p>Products</p></div>
+                    <div
+                        onClick={() => handleNavigate("/")}
+                        className={pathname === "/" && "selected"}
+                    ><p>Home</p></div>
+                    <div
+                        onClick={() => handleNavigate("/products")}
+                        className={pathname === "/products" && "selected"}
+                    ><p>Products</p></div>
                     <div><p>My Account</p></div>
                     <div><p>About</p></div>
                     <div><p>Contact</p></div>
@@ -28,9 +41,11 @@ const PageContainer = ({ children }) => {
                     </div>
                 </nav>
             </section>
-            <div className="page-content">
+            <div className="main-section">
                 <Sidebar />
-                {children}
+                <div className="page-content">
+                    {children}
+                </div>
             </div>
             <section className="learn-more-banner">
                 <div>
