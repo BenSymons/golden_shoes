@@ -1,12 +1,21 @@
 .header {
   display: flex;
   background-color: #8e231d;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+}
+
+.page-content {
+  padding-top: 100px;
+  display: flex;
 }
 
 .flex {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin: 0px;
 }
 
 .flex-valign {
@@ -31,6 +40,7 @@
   padding-right: 25px;
   height: 100%;
   border: 1px solid grey;
+  box-sizing: border-box;
 }
 
 .logo-box {
@@ -72,4 +82,45 @@
 
 .footer>p:nth-child(1) {
   border: none;
+}
+
+.cat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0px;
+  padding: 5px 0px 5px 5px;
+  box-sizing: border-box;
+  border: 1px solid lightgray
+}
+
+.sidebar>section {
+  margin: 10px;
+  border: solid 1px lightgray;
+}
+
+.sidebar-content {
+  padding: 7px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  background-color: grey;
+  color: white;
+  font-weight: bold;
+  height: 40px;
+}
+
+.search-button {
+  background-color: #8e231d;
+  color: white;
+  border: 0px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+p {
+  margin: 0px
 }

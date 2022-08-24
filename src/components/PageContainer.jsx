@@ -1,6 +1,7 @@
 import { IoCartSharp } from "react-icons/io5"
 import { FaPhone, FaPlane, FaGift, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa"
 import { FiChevronsRight } from "react-icons/fi"
+import Sidebar from "./Sidebar"
 
 const PageContainer = ({ children }) => {
     return (
@@ -28,6 +29,7 @@ const PageContainer = ({ children }) => {
                 </nav>
             </section>
             <div className="page-content">
+                <Sidebar />
                 {children}
             </div>
             <section className="learn-more-banner">
