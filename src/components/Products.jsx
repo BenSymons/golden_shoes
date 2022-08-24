@@ -6,7 +6,6 @@ const ProductsPage = () => {
     console.log(products)
     return (
         <PageContainer>
-            <p>Products</p>
             <div className="products-container">
                 {products.map((product, index) => {
                     return <ProductCard product={product} key={`product ${index}`} />

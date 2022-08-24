@@ -24,7 +24,7 @@ const PageContainer = ({ children }) => {
                     ><p>Home</p></div>
                     <div
                         onClick={() => handleNavigate("/products")}
-                        className={pathname === "/products" && "selected"}
+                        className={/product/.test(pathname) && "selected"}
                     ><p>Products</p></div>
                     <div><p>My Account</p></div>
                     <div><p>About</p></div>
