@@ -6,7 +6,7 @@ const ProductPage = () => {
     const params = useParams()
     const thisProduct = products.find(product => product.id == params.productId)
     console.log(thisProduct, "<-- thisProduct")
-    const { name, image, price, category, gender } = thisProduct
+    const { name, image, price, category, gender, stock } = thisProduct
     return (
         <PageContainer>
             <div className="product-container">
@@ -18,10 +18,13 @@ const ProductPage = () => {
                         </div>
                         <h3>{gender}</h3>
                         <p>{name}</p>
-                        <p className="price">{price}</p>
+                        <p className="price">{stock === 0 ? "OUT OF STOCK" : price}</p>
                     </div>
                 </div>
-                <button className="buy-now">Buy now!</button>
+                <button
+                    className="buy-now"
+                    disabled={stock === 0}
+                >Buy now!</button>
             </div>
         </PageContainer>
     )
