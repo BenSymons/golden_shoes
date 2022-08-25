@@ -7,8 +7,13 @@ const ProductsPage = () => {
     return (
         <PageContainer>
             <div className="products-container">
-                {products.map((product, index) => {
-                    return <ProductCard product={product} key={`product ${index}`} />
+                {products.map((product) => {
+                    return (
+                        <ProductCard
+                            product={product}
+                            key={`product ${product.id}`}
+                        />
+                    )
                 })}
             </div>
         </PageContainer>

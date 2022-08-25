@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "name": "Comfortable shoe",
         "price": "£28.99",
         "category": "Women's Casual",
@@ -7,6 +8,7 @@
         "image": "https://cdn.britannica.com/04/123704-050-023DC490/Pair-leather-shoes.jpg"
     },
     {
+        "id": 2,
         "name": "Protected outdoor shoe",
         "price": "£43.99",
         "category": "Men's Work",
@@ -14,6 +16,7 @@
         "image": "https://m.media-amazon.com/images/I/818R+6p-78L._AC_UL1500_.jpg"
     },
     {
+        "id": 3,
         "name": "Nike white trainers",
         "price": "45.50",
         "category": "Men's Sports",
@@ -21,6 +24,7 @@
         "image": "https://i8.amplience.net/i/jpl/jd_131907_a?qlt=92&w=750&h=531&v=1&fmt=auto"
     },
     {
+        "id": 4,
         "name": "High Heels",
         "price": "45.50",
         "category": "Women's evening wear",

@@ -177,6 +177,29 @@ p {
   color: #8e231d;
 }
 
+.display-card {
+  width: 50%;
+  border: 1px solid lightgray;
+}
+
+.display-card>img {
+  padding: 8px;
+  box-sizing: border-box
+}
+
+.display-box {
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.buy-now {
+  height: 40px;
+  width: 90px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 img {
   object-fit: contain;
   width: 100%;
