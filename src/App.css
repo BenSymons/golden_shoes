@@ -119,6 +119,8 @@
 
 .search-button {
   background-color: #8e231d;
+  display: flex;
+  align-items: center;
   color: white;
   border: 0px;
   padding: 6px 12px;
@@ -203,4 +205,12 @@ p {
 img {
   object-fit: contain;
   width: 100%;
+}
+
+.excerpt {
+  background-color: rgb(232, 230, 230);
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 18px;
+  margin-top: 10px;
 }

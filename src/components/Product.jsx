@@ -1,6 +1,7 @@
 import PageContainer from "./PageContainer"
 import products from "../data/products.json"
 import { useParams } from "react-router-dom"
+import Returns from "../components/Returns"
 
 const ProductPage = () => {
     const params = useParams()
@@ -21,6 +22,7 @@ const ProductPage = () => {
                         <p className="price">{stock === 0 ? "OUT OF STOCK" : price}</p>
                     </div>
                 </div>
+                <Returns />
                 <button
                     className="buy-now"
                     disabled={stock === 0}
