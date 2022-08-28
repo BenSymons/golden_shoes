@@ -28,6 +28,10 @@ const PageContainer = ({ children }) => {
                     ><p>Products</p></div>
                     <div><p>My Account</p></div>
                     <div><p>About</p></div>
+                    <div
+                        onClick={() => handleNavigate("/faqs")}
+                        className={/faqs/.test(pathname) && "selected"}
+                    ><p>FAQs</p></div>
                     <div><p>Contact</p></div>
                     <div className="cart-button">
                         <div className="flex-valign">
