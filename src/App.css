@@ -13,6 +13,8 @@
 }
 
 .page-content {
+  display: flex;
+  flex-direction: column;
   margin: 10px;
   width: 100%;
 }
@@ -229,4 +231,11 @@ img {
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+.featured {
+  width: 55%;
+  align-self: center;
+  border: solid 1px lightgray;
+  padding: 10px
 }
