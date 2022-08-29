@@ -15,9 +15,7 @@ const PageContainer = ({ children }) => {
     const navigate = useNavigate()
     const location = useLocation()
     const { pathname } = location
-    console.log(width)
-    console.log(width > 1000)
-
+    const less900 = width < 900
     const handleNavigate = (url) => navigate(url)
 
     return (
@@ -57,8 +55,8 @@ const PageContainer = ({ children }) => {
                 )}
             </section>
             {menu && <BurgerMenu />}
-            <div className={width > 900 ? "main-section" : "main-section-mobile"}>
-                {width > 900 ? <Sidebar /> : <MobileSidebar />}
+            <div className={less900 ? "main-section-mobile" : "main-section"}>
+                {less900 ? <MobileSidebar /> : <Sidebar />}
                 <div className="page-content">
                     {children}
                 </div>
@@ -69,53 +67,60 @@ const PageContainer = ({ children }) => {
                         <FaPlane fontSize="36px" />
                         <p>SHIPPING</p>
                     </div>
-                    <p>Items are shipped every Tuesday at 3pm. The estimated time for delivery is 1 week.
+                    {!less900 && <div><p>Items are shipped every Tuesday at 3pm. The estimated time for delivery is 1 week.
                         If you have not received your product in two weeks, call 07123456789.
                     </p>
-                    <div className="flex">
-                        <FiChevronsRight />
-                        <a>Learn More</a>
-                    </div>
+                        <div className="flex">
+                            <FiChevronsRight />
+                            <a>Learn More</a>
+                        </div>
+                    </div>}
                 </div>
                 <div>
                     <div className="flex">
                         <FaPhone fontSize="36px" />
                         <p>CONTACT US (8-4)</p>
                     </div>
-                    <p>For more information call one of the following (9-5 - Monday to Friday):</p>
-                    <ul>
-                        <li>Womens products: 0797163641</li>
-                        <li>Mens products: 0797163641</li>
-                        <li>All other concerns: 0797163641</li>
-                    </ul>
-                    <div className="flex">
-                        <FiChevronsRight />
-                        <a>Learn More</a>
-                    </div>
+                    {!less900 && <div>
+                        <p>For more information call one of the following (9-5 - Monday to Friday):</p>
+                        <ul>
+                            <li>Womens products: 0797163641</li>
+                            <li>Mens products: 0797163641</li>
+                            <li>All other concerns: 0797163641</li>
+                        </ul>
+                        <div className="flex">
+                            <FiChevronsRight />
+                            <a>Learn More</a>
+                        </div>
+                    </div>}
                 </div>
                 <div>
                     <div className="flex">
                         <FaGift fontSize="36px" />
                         <p>GIFT WRAPPING</p>
                     </div>
-                    <p>Gift wrapping available at checkout</p>
-                    <div className="flex">
-                        <FiChevronsRight />
-                        <a>Learn More</a>
-                    </div>
+                    {!less900 && <div>
+                        <p>Gift wrapping available at checkout</p>
+                        <div className="flex">
+                            <FiChevronsRight />
+                            <a>Learn More</a>
+                        </div>
+                    </div>}
                 </div>
                 <div>
                     <div className="flex">
                         <IoCartSharp fontSize="36px" />
                         <p>SHOPPING CART</p>
                     </div>
-                    <p>Our shopping cart will store your shoes. If you choose not to purchase these at the moment.
-                        To learn more about the shopping cart process, click learn more below
-                    </p>
-                    <div className="flex">
-                        <FiChevronsRight />
-                        <a>Learn More</a>
-                    </div>
+                    {!less900 && <div>
+                        <p>Our shopping cart will store your shoes. If you choose not to purchase these at the moment.
+                            To learn more about the shopping cart process, click learn more below
+                        </p>
+                        <div className="flex">
+                            <FiChevronsRight />
+                            <a>Learn More</a>
+                        </div>
+                    </div>}
                 </div>
             </section>
             <section className="footer">

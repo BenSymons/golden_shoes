@@ -71,14 +71,16 @@
 
 .learn-more-banner {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
   gap: 40px;
   border-top: 1px solid rgb(208, 208, 208);
+  min-height: 80px;
 }
 
 .learn-more-banner>* {
-  flex-basis: 25%;
+  flex-basis: 20%;
 }
 
 .footer {

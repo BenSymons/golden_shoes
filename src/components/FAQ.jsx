@@ -64,6 +64,22 @@ const FAQs = () => {
                 rutrum tortor ligula, eu dictum velit congue pellentesque. Vestibulum ante ipsum primis in faucibus orci luctus
                 et ultrices posuere cubilia curae; Pellentesque sodales vestibulum nisl at vestibulum. Interdum et malesuada fames
                 ac ante ipsum primis in faucibus. </p>
+            <p className="subtitle">Shipping</p>
+            <p>Items are shipped every Tuesday at 3pm. The estimated time for delivery is 1 week.
+                If you have not received your product in two weeks, call 07123456789.</p>
+            <p className="subtitle">Contact Us</p>
+            <p>For more information call one of the following (9-5 - Monday to Friday):</p>
+            <ul>
+                <li>Womens products: 0797163641</li>
+                <li>Mens products: 0797163641</li>
+                <li>All other concerns: 0797163641</li>
+            </ul>
+            <p className="subtitle">Gift Wrapping</p>
+            <p>Gift wrapping available at checkout</p>
+            <p className="subtitle">Shopping Cart</p>
+            <p>Our shopping cart will store your shoes. If you choose not to purchase these at the moment.
+                To learn more about the shopping cart process, click learn more below
+            </p>
         </PageContainer>
     )
 }

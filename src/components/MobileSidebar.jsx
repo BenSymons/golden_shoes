@@ -11,7 +11,7 @@ const MobileSidebar = () => {
                     className="label"
                     onClick={() => setDisplays((prev) => ({ ...prev, search: !prev.search }))}
                 >
-                    <p>Searchhhhh by</p>
+                    <p>Search by</p>
                 </div>
                 {displays.search && <div className="sidebar-content">
                     <label>Keyword</label><br />
