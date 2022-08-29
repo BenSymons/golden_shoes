@@ -14,6 +14,8 @@ const PageContainer = ({ children }) => {
     const navigate = useNavigate()
     const location = useLocation()
     const { pathname } = location
+    console.log(width)
+    console.log(width > 1000)
 
     const handleNavigate = (url) => navigate(url)
 
@@ -23,7 +25,7 @@ const PageContainer = ({ children }) => {
                 <div className="logo-box">
                     <p>Golden Shoe</p>
                 </div>
-                {width < 1000 ? <BurgerButton setMenu={setMenu} /> : (
+                {width < 1000 ? <BurgerButton setMenu={setMenu} width={width} /> : (
                     <nav className="header-buttons">
                         <div
                             onClick={() => handleNavigate("/")}

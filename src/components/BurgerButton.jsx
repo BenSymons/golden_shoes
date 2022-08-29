@@ -1,7 +1,7 @@
 import { IoCartSharp } from "react-icons/io5"
 import { FiMenu } from "react-icons/fi"
 
-const BurgerButton = ({ setMenu }) => {
+const BurgerButton = ({ setMenu, width }) => {
     return (
         <div className="header-buttons">
             <div
@@ -10,15 +10,14 @@ const BurgerButton = ({ setMenu }) => {
             >
                 <FiMenu />
             </div>
-            <div className="cart-button">
+            <div className={width > 500 && "cart-button"}>
                 <div className="flex-valign">
                     <IoCartSharp fontSize="30px" />
-                    <p>Your Shopping Cart</p>
                 </div>
-                <div className="flex-valign">
+                {width > 500 && (<div>
                     <p>Shoes: 1</p>
                     <p>Cost: £65.99</p>
-                </div>
+                </div>)}
             </div>
         </div>
     )
