@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom"
+import useWidth from "../utils/useWidth"
 
 const ProductCard = ({ product }) => {
+    const width = useWidth()
     const navigate = useNavigate()
     const { id, image, name, price, category, gender, stock } = product
     return (
@@ -9,7 +11,7 @@ const ProductCard = ({ product }) => {
             onClick={() => navigate(`/product/${id}`)}
         >
             <img src={image} />
-            <div className="info-box">
+            <div className={width > 500 ? "info-box" : undefined}>
                 <div className="product-cat">
                     <p>{category}</p>
                 </div>
