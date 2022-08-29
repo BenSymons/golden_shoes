@@ -9,7 +9,7 @@ const Home = () => {
             <img className="featured" src={products[0].image} />
             <div className="products-container">
                 {otherProducts.map((product) => {
-                    return <ProductCard product={product} />
+                    return <ProductCard key={product.id} product={product} />
                 })}
             </div>
         </PageContainer>

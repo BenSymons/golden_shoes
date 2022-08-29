@@ -2,7 +2,7 @@ import { IoCartSharp } from "react-icons/io5"
 import { FaPhone, FaPlane, FaGift, FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa"
 import { FiChevronsRight } from "react-icons/fi"
 import Sidebar from "./Sidebar"
-import { useNavigate, useLocation } from "react-router-dom"
+import { useNavigate, useLocation, Link } from "react-router-dom"
 import BurgerButton from "./BurgerButton"
 import useWidth from "../utils/useWidth"
 import { useState } from "react"
@@ -28,17 +28,17 @@ const PageContainer = ({ children }) => {
                     <nav className="header-buttons">
                         <div
                             onClick={() => handleNavigate("/")}
-                            className={pathname === "/" && "selected"}
+                            className={pathname === "/" ? "selected" : undefined}
                         ><p>Home</p></div>
                         <div
                             onClick={() => handleNavigate("/products")}
-                            className={/product/.test(pathname) && "selected"}
+                            className={/product/.test(pathname) ? "selected" : undefined}
                         ><p>Products</p></div>
                         <div><p>My Account</p></div>
                         <div><p>About</p></div>
                         <div
                             onClick={() => handleNavigate("/faqs")}
-                            className={/faqs/.test(pathname) && "selected"}
+                            className={/faqs/.test(pathname) ? "selected" : undefined}
                         ><p>FAQs</p></div>
                         <div><p>Contact</p></div>
                         <div className="cart-button">
@@ -62,7 +62,10 @@ const PageContainer = ({ children }) => {
                 </div>
             </div>
             <section className="learn-more-banner">
-                <div>
+                <div onClick={() => {
+                    if (!less900) return null
+                    navigate("/faqs")
+                }}>
                     <div className="flex">
                         <FaPlane fontSize="36px" />
                         <p>SHIPPING</p>
@@ -72,11 +75,14 @@ const PageContainer = ({ children }) => {
                     </p>
                         <div className="flex">
                             <FiChevronsRight />
-                            <a>Learn More</a>
+                            <Link to="/faqs">Learn More</Link>
                         </div>
                     </div>}
                 </div>
-                <div>
+                <div onClick={() => {
+                    if (!less900) return null
+                    navigate("/faqs")
+                }}>
                     <div className="flex">
                         <FaPhone fontSize="36px" />
                         <p>CONTACT US (8-4)</p>
@@ -90,11 +96,14 @@ const PageContainer = ({ children }) => {
                         </ul>
                         <div className="flex">
                             <FiChevronsRight />
-                            <a>Learn More</a>
+                            <Link to="/faqs">Learn More</Link>
                         </div>
                     </div>}
                 </div>
-                <div>
+                <div onClick={() => {
+                    if (!less900) return null
+                    navigate("/faqs")
+                }}>
                     <div className="flex">
                         <FaGift fontSize="36px" />
                         <p>GIFT WRAPPING</p>
@@ -103,11 +112,14 @@ const PageContainer = ({ children }) => {
                         <p>Gift wrapping available at checkout</p>
                         <div className="flex">
                             <FiChevronsRight />
-                            <a>Learn More</a>
+                            <Link to="/faqs">Learn More</Link>
                         </div>
                     </div>}
                 </div>
-                <div>
+                <div onClick={() => {
+                    if (!less900) return null
+                    navigate("/faqs")
+                }}>
                     <div className="flex">
                         <IoCartSharp fontSize="36px" />
                         <p>SHOPPING CART</p>
@@ -118,7 +130,7 @@ const PageContainer = ({ children }) => {
                         </p>
                         <div className="flex">
                             <FiChevronsRight />
-                            <a>Learn More</a>
+                            <Link to="/faqs">Learn More</Link>
                         </div>
                     </div>}
                 </div>

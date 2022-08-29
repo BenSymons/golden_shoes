@@ -1,10 +1,13 @@
+import { useNavigate } from "react-router-dom"
+
 const BurgerMenu = () => {
+    const navigate = useNavigate()
     return (
         <div className="burger-menu">
-            <div>
+            <div onClick={() => navigate("/")}>
                 <p>Home</p>
             </div>
-            <div>
+            <div onClick={() => navigate("/products")}>
                 <p>Products</p>
             </div>
             <div>
@@ -13,7 +16,7 @@ const BurgerMenu = () => {
             <div>
                 <p>About</p>
             </div>
-            <div>
+            <div onClick={() => navigate("/faqs")}>
                 <p>FAQs</p>
             </div>
             <div>
