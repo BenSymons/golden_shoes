@@ -12,6 +12,12 @@
   display: flex;
 }
 
+.main-section-mobile {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
 .page-content {
   display: flex;
   flex-direction: column;

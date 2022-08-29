@@ -7,6 +7,7 @@ import BurgerButton from "./BurgerButton"
 import useWidth from "../utils/useWidth"
 import { useState } from "react"
 import BurgerMenu from "./BurgerMenu"
+import MobileSidebar from "./MobileSidebar"
 
 const PageContainer = ({ children }) => {
     const [menu, setMenu] = useState(false)
@@ -56,8 +57,8 @@ const PageContainer = ({ children }) => {
                 )}
             </section>
             {menu && <BurgerMenu />}
-            <div className="main-section">
-                <Sidebar />
+            <div className={width > 900 ? "main-section" : "main-section-mobile"}>
+                {width > 900 ? <Sidebar /> : <MobileSidebar />}
                 <div className="page-content">
                     {children}
                 </div>
