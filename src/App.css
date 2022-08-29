@@ -239,3 +239,52 @@ img {
   border: solid 1px lightgray;
   padding: 10px
 }
+
+.burger-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  background-color: lightgray;
+  color: black;
+  height: 60px;
+  width: 60px;
+  font-size: 20px;
+  padding: 0px;
+  text-align: center;
+}
+
+.burger-button:active {
+  background-color: grey;
+}
+
+.burger-menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 100px;
+  z-index: 4;
+  /* background-color: #8e231d; */
+  background-color: lightgray;
+  box-sizing: border-box;
+  border: 1px solid grey;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.burger-menu>* {
+  width: 90%;
+  background-color: #8e231d;
+  margin: 7px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}

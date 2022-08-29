@@ -3,8 +3,14 @@ import { FaPhone, FaPlane, FaGift, FaTwitter, FaFacebook, FaInstagram } from "re
 import { FiChevronsRight } from "react-icons/fi"
 import Sidebar from "./Sidebar"
 import { useNavigate, useLocation } from "react-router-dom"
+import BurgerButton from "./BurgerButton"
+import useWidth from "../utils/useWidth"
+import { useState } from "react"
+import BurgerMenu from "./BurgerMenu"
 
 const PageContainer = ({ children }) => {
+    const [menu, setMenu] = useState(false)
+    const width = useWidth()
     const navigate = useNavigate()
     const location = useLocation()
     const { pathname } = location
@@ -17,34 +23,37 @@ const PageContainer = ({ children }) => {
                 <div className="logo-box">
                     <p>Golden Shoe</p>
                 </div>
-                <nav className="header-buttons">
-                    <div
-                        onClick={() => handleNavigate("/")}
-                        className={pathname === "/" && "selected"}
-                    ><p>Home</p></div>
-                    <div
-                        onClick={() => handleNavigate("/products")}
-                        className={/product/.test(pathname) && "selected"}
-                    ><p>Products</p></div>
-                    <div><p>My Account</p></div>
-                    <div><p>About</p></div>
-                    <div
-                        onClick={() => handleNavigate("/faqs")}
-                        className={/faqs/.test(pathname) && "selected"}
-                    ><p>FAQs</p></div>
-                    <div><p>Contact</p></div>
-                    <div className="cart-button">
-                        <div className="flex-valign">
-                            <IoCartSharp fontSize="30px" />
-                            <p>Your Shopping Cart</p>
+                {width < 1000 ? <BurgerButton setMenu={setMenu} /> : (
+                    <nav className="header-buttons">
+                        <div
+                            onClick={() => handleNavigate("/")}
+                            className={pathname === "/" && "selected"}
+                        ><p>Home</p></div>
+                        <div
+                            onClick={() => handleNavigate("/products")}
+                            className={/product/.test(pathname) && "selected"}
+                        ><p>Products</p></div>
+                        <div><p>My Account</p></div>
+                        <div><p>About</p></div>
+                        <div
+                            onClick={() => handleNavigate("/faqs")}
+                            className={/faqs/.test(pathname) && "selected"}
+                        ><p>FAQs</p></div>
+                        <div><p>Contact</p></div>
+                        <div className="cart-button">
+                            <div className="flex-valign">
+                                <IoCartSharp fontSize="30px" />
+                                <p>Your Shopping Cart</p>
+                            </div>
+                            <div className="flex-valign">
+                                <p>Shoes: 1</p>
+                                <p>Cost: £65.99</p>
+                            </div>
                         </div>
-                        <div className="flex-valign">
-                            <p>Shoes: 1</p>
-                            <p>Cost: £65.99</p>
-                        </div>
-                    </div>
-                </nav>
+                    </nav>
+                )}
             </section>
+            {menu && <BurgerMenu />}
             <div className="main-section">
                 <Sidebar />
                 <div className="page-content">
