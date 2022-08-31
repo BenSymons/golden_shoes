@@ -17,8 +17,7 @@ const ProductCard = ({ product }) => {
                 <div className="details">
                     <h3>{gender}</h3>
                     <p>{name}</p>
-                    <p className="price">{stock === 0 ? "OUT OF STOCK" : price}</p>
-                    {stock <= 3 && stock !== 0 && `only ${stock} left in stock`}
+                    <p className="price">{price}</p>
                 </div>
             </div>
         </div>
